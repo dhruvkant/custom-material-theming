@@ -1,0 +1,27 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<form [formGroup]="sampleFormGroup">
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Task</mat-label>
+      <input matInput />
+      <mat-divider [vertical]="true"></mat-divider>
+      <mat-icon matSuffix>content_copy</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>WO</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>WCM</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </p>
+</form>
