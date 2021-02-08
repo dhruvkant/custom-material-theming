@@ -5,23 +5,23 @@
 
 <form [formGroup]="sampleFormGroup">
   <p>
-    <mat-form-field appearance="legacy">
+    <mat-form-field  appearance="legacy">
       <mat-label>Task</mat-label>
-      <input matInput />
-      <mat-divider [vertical]="true"></mat-divider>
-      <mat-icon matSuffix>content_copy</mat-icon>
+      <input matInput formControlName="taskNumber" />
+      <mat-icon fontSet="material-icons" matSuffix>search</mat-icon>
+      <mat-error *ngIf="sampleFormGroup.controls.taskNumber.hasError('required')"></mat-error>
     </mat-form-field>
   </p>
   <p>
-    <mat-form-field appearance="standard">
+    <mat-form-field appearance="legacy">
       <mat-label>WO</mat-label>
-      <input matInput />
+      <input matInput formControlName="wo" />
     </mat-form-field>
   </p>
   <p>
-    <mat-form-field appearance="standard">
+    <mat-form-field appearance="outline">
       <mat-label>WCM</mat-label>
-      <input matInput />
+      <input matInput formControlName="wc" />
     </mat-form-field>
   </p>
 </form>

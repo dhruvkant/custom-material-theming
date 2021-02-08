@@ -2,8 +2,65 @@
 
 /* @import "@angular/material/prebuilt-themes/indigo-pink.css"; */
 
+$primary-pallete: (
+  50: #e8ebf2,
+  100: #c4cde0,
+  200: #9eaccb,
+  300: #798cb5,
+  400: #5c73a6,
+  500: #3e5b99,
+  600: #375390,
+  700: #2f4984,
+  800: #283f77,
+  900: #1e2f60,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff
+  )
+);
 
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 
 @include mat-core();
+
+$primary: mat-palette($primary-pallete);
+$accent: mat-palette($primary-pallete);
+
+// The warn palette is optional (defaults to red).
+$warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as `color` or `typography`.
+$app-theme: mat-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn
+    )
+  )
+);
+
+// that you are using.
+@include angular-material-theme($app-theme);
+
+mat-form-field.mat-form-field {
+  font-size: 12px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick  {
+  color: map-get($primary, 500)
+}
+
+.mat-form-field-ripple {
+  background-color: map-get($primary, 500)
+}
 
